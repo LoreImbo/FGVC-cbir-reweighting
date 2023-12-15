@@ -1,3 +1,27 @@
+# AUDIO SIGNAL CLASSIFICATION
+
+# IMAGE CLASSIFICATION
+
+It was decided to develop different architectures to evaluate them in a comparison on the same data and get better results.
+A hand-made model was initially tried to be developed, but given the poor results, it was decided to use the transfer-learning technique, which essentially allows the import of pre-trained models with their corresponding weights.
+
+The first model uses the DenseNet201 network, of which the last 200 layers were retrained; in fact, the trainable parameters are about 9M. The model takes as input images with dimensions 224x224x3 channels, and in addition to the structure itself of the network, two Pooling layers were added. After that two layers of Dense with fz of relu activation, with relative Batch Normalization and a Dropout rate of 50%. Finally, the fully-connected layer with size 100 and softmax activation fz so as to obtain the probabilities associated with each class.
+
+The second architecture follows the previous one with the difference that in this case it was decided to re-train all the parameters of the DenseNet, more than 20M.
+
+Finally, the third architecture uses the same final layers seen in the first but in this case it was decided to try a different pre-trained network, namely ResNet50 of which all the parameters were re-trained.
+
+The results of the first architecture are not satisfactory since an accuracy of almost 100% on the training set is matched by one on validation around 65%. In addition, it can be seen that from the tenth epoch onward the performance on the related datasets recedes significantly producing an overfitting effect.
+
+With the second model, on the other hand, very satisfactory results are obtained since it achieves 80% accuracy on validation and in general we see how the growth on validation follows that on training. One could also have decided to reduce the number of training epochs but the intent was to have the model learn as many examples of the training as possible. The good performance is also confirmed by the significant color relevance of the confusion matrix.
+
+Finally, the third model achieves probably the worst result regarding generalization over the validation set since it achieves only 60% accuracy and in general seems to suffer from overfitting.
+
+It was then decided to choose the second model as the best and evaluate it on the test set. 
+The model is confirmed to be excellent since it achieves an accuracy of 80% and a loss less than 0.9. It is then also evaluated using a single image taken from the web related to the 757-200 class of airplanes and the model confirms the excellent performance since it ranks it correctly with a probability of 83%.
+
+
+
 # Implementation of the paper "Feature re-weighting in content-based image retrieval"
 
 
