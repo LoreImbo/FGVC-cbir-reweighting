@@ -1,5 +1,13 @@
 # AUDIO SIGNAL CLASSIFICATION
 
+Regarding the first task, the goal is the correct classification of audio signals.
+
+The speech command dataset was used, which consists of about 65000 instances divided into 30 different classes.
+
+A function was defined to perform feature extraction through the use of cepstral features, and then a network consisting of a GRU layer and a fully-connected dense.
+
+The performance obtained is very good as it reaches about 90% on training and validation set.
+
 # IMAGE CLASSIFICATION
 
 It was decided to develop different architectures to evaluate them in a comparison on the same data and get better results.
